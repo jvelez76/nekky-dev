@@ -5,8 +5,13 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+//Database connection
+mongoose = require('mongoose');
+
+
+
+//Declaring routes
 var routes = require('./routes/index');
-var users = require('./routes/users');
 var cms = require('./modules/cms');
 
 var app = express();
@@ -24,17 +29,16 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 ///Route to CMS
 app.use('/', cms);
-app.use('/users', users);
+
 
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {
-    var err = new Error('Not Found');
+    var err = new Error('Document not found');
     err.status = 404;
     next(err);
 });
 
 /// error handlers
-
 // development error handler
 // will print stacktrace
 if (app.get('env') === 'development') {
