@@ -7,12 +7,10 @@ var bodyParser = require('body-parser');
 
 //Database connection
 mongoose = require('mongoose');
-
-
+mongoose.connect('mongodb://localhost/nekky-dev');
 
 //Declaring routes
-var routes = require('./routes/index');
-var cms = require('./modules/cms');
+var routes = require('./routes/routes-users');
 
 var app = express();
 
@@ -27,18 +25,24 @@ app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-///Route to CMS
-app.use('/', cms);
+//Set public the modules folder
+app.use(express.static(path.join(__dirname, 'frontend')));
+app.use(express.static(path.join(__dirname, 'backend')));
 
 
-/// catch 404 and forward to error handler
+///Routes
+app.use('/', routes);
+
+
+/// Error 404 and error handlers
+// catch 404 and forward to error handler
 app.use(function(req, res, next) {
     var err = new Error('Document not found');
     err.status = 404;
     next(err);
 });
 
-/// error handlers
+// error handlers
 // development error handler
 // will print stacktrace
 if (app.get('env') === 'development') {
@@ -61,5 +65,8 @@ app.use(function(err, req, res, next) {
     });
 });
 
+// listen at port 8000
+app.listen(8000);
 
+// create and export the app
 module.exports = app;

@@ -1,7 +1,19 @@
-form(id="signin", method="POST", action="/signin")
-    lable(for='email') Email
-    input#email(type='text', name='email')
-    lable(for='password') Password
-    input#password(type='text', name='password')
-    input(type="submit", value="Sign in")
-h1!=message
+extends layout
+block extraHeader
+    script(type='text/javascript', src='/nekky-users/signin.js')
+block content
+    .divContent
+        form(id="signin", method="POST", action="/signin")
+            h1 Nekky Sign In
+            label(for='email') Email:&nbsp;
+            input#email(type='text', name='email')
+            br
+            label(for='password') Password: &nbsp;
+            input#password(type='text', name='password')
+            br
+            br
+            input(type="submit", value="Sign in")
+            h1!=message
+            br
+            br
+            a(href="/") < Back
