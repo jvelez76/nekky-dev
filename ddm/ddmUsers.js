@@ -128,9 +128,33 @@ exports.ddmUsers = new Object({
         },
         status: {
             field   : 'String',
+            len     : 15,
+            default : null,
+            show    : false,
+            reason  : {
+                field   : 'String',
+                len     : 15,
+                default : null,
+                show    : false}
+        },
+        created: {
+            field   : 'Date',
+            len     : 0,
+            default : null,
+            show    : false
+        },
+        modified: {
+            field   : 'Date',
+            len     : 0,
+            default : null,
+            show    : false
+        },
+        userIdModified: {
+            field   : 'String',
             len     : 0,
             default : null,
             show    : false
         }
+
     }
 });
