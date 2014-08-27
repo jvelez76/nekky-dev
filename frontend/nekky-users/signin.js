@@ -11,7 +11,7 @@
 // Document ready
 $(document).ready(function() {
 
-    alert("hola");
+    //alert("hola");
 
 });
 

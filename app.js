@@ -5,6 +5,14 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+/*
+//prueba
+var nekky = require('nekky-users');
+
+var bin = nekky.bin(1337);
+console.log(bin);
+*/
+
 //Database connection
 mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/nekky-dev');
@@ -27,7 +35,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //Set public the modules folder
 app.use(express.static(path.join(__dirname, 'frontend')));
-app.use(express.static(path.join(__dirname, 'backend')));
+//app.use(express.static(path.join(__dirname, 'backend')));
 
 
 ///Routes

@@ -1,0 +1,12 @@
+{
+  "name": "nekky-users",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "express": "~4.2.0",
+    "morgan": "~1.0.0",
+    "debug": "~0.7.4",
+    "mongodb": "*",
+    "mongoose": "*"
+  }
+}

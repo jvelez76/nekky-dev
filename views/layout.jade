@@ -1,9 +1,46 @@
 doctype html
-html
-  head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-    script(type='text/javascript', src='/javascripts/jquery.min.js')
+html(lang='en')
+head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(name='author', content='Nekky Group')
+    meta(name='copyright', content='Copyright 2014 - Nekky Group')
+
+    meta(name='description' content='nekky.com - Celebrate their legacy - Dedicado a honrar y celebrar la memoria de nuestros seres queridos, basado en una tradicion mexicana llamada Dia de Muertos...')
+    meta(name='keywords', content='nekky, mexico, altar, altares, muertos, dead')
+    meta(name='robots', content='index,follow')
+
+    title Nekky - Celebrate their legacy
+
+    //Bootstrap core CSS
+    link(href='/bootstrap-3.0.0/dist/css/bootstrap.css', rel='stylesheet')
+    //Custom styles for this template
+    link(href='/bootstrap-3.0.0/examples/theme/theme.css', rel='stylesheet')
+
     block extraHeader
-  body
+body
+    .navbar.navbar-inverse.navbar-fixed-top
+        .container
+            .navbar-header
+                button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+                    span.icon-bar
+                    span.icon-bar
+                    span.icon-bar
+                a.navbar-brand(href='#') Bootstrap 3 / Jade
+            .collapse.navbar-collapse
+                ul.nav.navbar-nav
+                    li.active
+                        a(href='#') Home
+                    li
+                        a(href='/about') About ALT-F1
+                    li
+                        a(href='/contact') Contact ALT-F1
+
+
+    //
     block content
+
+
+script(src='/bootstrap-3.0.0/assets/js/jquery.js').
+script(src='/bootstrap-3.0.0/dist/js/bootstrap.min.js')
+

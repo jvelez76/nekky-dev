@@ -1,0 +1,12 @@
+extends layout
+block extraHeader
+    script(type='text/javascript', src='/nekky-users/signup.js')
+block content
+    .divContent
+        form(id="signin", method="POST", action="/signin")
+            h1 Nekky Sign Up
+            br
+            #contenedor.form
+            br
+            br
+            a(href="/") < Back
