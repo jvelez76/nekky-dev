@@ -1,0 +1,3 @@
+exports.ddmAltars = new Object({
+
+});
